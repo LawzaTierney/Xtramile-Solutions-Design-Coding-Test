@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Patient Management System</h1>
+        
+        <!-- Search Section -->
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search by PID or Name...">
+            <button onclick="searchPatient()">Search</button>
+        </div>
+
+        <!-- Patient Form -->
+        <form id="patient-form">
+            <input type="text" id="pid" placeholder="PID" required>
+            <input type="text" id="first-name" placeholder="First Name" required>
+            <input type="text" id="last-name" placeholder="Last Name" required>
+            <input type="date" id="dob" required>
+            <select id="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="text" id="address" placeholder="Address" required>
+            <input type="text" id="suburb" placeholder="Suburb" required>
+            <input type="text" id="state" placeholder="State" required>
+            <input type="text" id="postcode" placeholder="Postcode" required>
+            <input type="text" id="phone" placeholder="Phone Number" required>
+            <button type="submit">Save Patient</button>
+        </form>
+
+        <!-- Patient List Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>PID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>DOB</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>Suburb</th>
+                        <th>State</th>
+                        <th>Postcode</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="patient-list">
+                    <tr>
+                        <td>P001</td>
+                        <td>Lawrence</td>
+                        <td>Tierney</td>
+                        <td>1999-09-10</td>
+                        <td>Male</td>
+                        <td>91 Camden St</td>
+                        <td>Sydney</td>
+                        <td>NSW</td>
+                        <td>2042</td>
+                        <td>+61 402716941</td>
+                        <td><button>Edit</button> <button>Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            <button onclick="prevPage()">Previous</button>
+            <span id="page-info">Page 1</span>
+            <button onclick="nextPage()">Next</button>
+        </div>
+    </div>
+</body>
+</html>
